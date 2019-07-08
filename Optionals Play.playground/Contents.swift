@@ -7,31 +7,31 @@ var aString:String = "Hello" // Initializing a String
 print(aString)
 
 // Watch for the different behavior between String and Optional String
-var myString:String
+var myString:String = "test"
 var myOptionalString:String?
 
 //TODO: remove the comment on the next line and fix the ERROR that it causes
-//print(myString)
+print(myString)
 print(myOptionalString) // this line should give a warning
 
 // MARK: Unwrapping an Optional converts it to the base data type
 myOptionalString = "World."
-print(myOptionalString) // this line should give a warning
+print(myOptionalString!) // this line should give a warning
 // Rewrite the line above to use myOptionalString! to "implicitly unwrap" the Optional. This will convert the Optional to a String and remove the warning
 
 //TODO: remove the comment on the next line and fix the ERROR that it causes
-//let newMessage:String = myOptionalString
+let newMessage:String = myOptionalString!
 
 print(aString.uppercased())
 //TODO: remove the comment on the next line and fix the ERROR that it causes
-//print(myOptionalString.uppercased())
+print(myOptionalString!.uppercased())
 
 // MARK: Optional Binding (if let)
-var anotherString:String?
+var anotherString:String? = "what it is!"
 
-if let bString = anotherString?.uppercased(){
+if let bString = anotherString?.uppercased() {
     //TODO: remove the comment on the next line and fix the ERROR that it causes using the binding variable bString
-    //print("Say \(aString) \(anotherString.uppercased()) with Optional Binding" )
+    print("Say \(aString) \(bString.uppercased()) with Optional Binding" )
 }
 // Initialize anotherString="Hello" just before the Optional Binding
 
